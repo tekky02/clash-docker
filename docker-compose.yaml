@@ -6,8 +6,8 @@ services:
     volumes:
       - ./config.yaml:/root/.config/clash/config.yaml
     ports:
-      - "7890:7890"
-      - "9090:9090"
+      - "${PROXY_PORT}:${PROXY_PORT}"
+      - "${EXTERNAL_PORT}:${EXTERNAL_PORT}"
     restart: always
     network_mode: "host"
 

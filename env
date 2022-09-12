@@ -1,0 +1,13 @@
+function proxy_off() {
+    unset http_proxy
+    unset https_proxy
+    unset all_proxy
+    echo -e "proxy off now..."
+}
+
+function proxy_on() {
+    export http_proxy="http://127.0.0.1:${PROXY_PORT}"
+    export https_proxy="http://127.0.0.1:${PROXY_PORT}"
+    export all_proxy="socks5://127.0.0.1:${PROXY_PORT}"
+    echo -e "proxy on now..."
+}
